@@ -1,0 +1,40 @@
+/*
+ * main.c
+ *
+ *  Created on: 02.05.2022
+ *      Author: Tim
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+// linux add pthread lib >> settings >> add lib >> insert name
+// cmd: man pthread_create
+
+void * function_thread1(void * parameter);
+void * function_thread2(void * parameter);
+int main()
+{
+	// declare thread structure
+	pthread_t thread1, thread2;
+	char * msg1 = "First Thread";
+	char * msg2 = "Second Thread";
+
+	// create threads
+	pthread_creat(&, NULL, function_thread1, (void *)msg1);
+
+	return 0;
+}
+void * function_thread1(void * parameter)
+{
+	char * msg;
+	msg = (char *)parameter;
+
+
+	return NULL;
+}
+
+void * function_thread1(void * parameter)
+{
+
+	return NULL;
+}

@@ -1,0 +1,98 @@
+Info: Nothing to build for ThreadExample
+Info: Nothing to build for Assignment_1_2
+Info: Nothing to build for Assignment_1_3
+Info: Nothing to build for FIFO_Scheduler
+Info: Nothing to build for Pointers
+Info: Nothing to build for Priority_Scheduler
+Info: Nothing to build for SampleProcess
+14:48:48 **** Incremental Build of configuration Debug for project ThreadExample ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.c" 
+gcc -o ThreadExample.exe "src\\main.o" -lpthread 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot find -lpthread
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for Assignment_1_2
+Info: Nothing to build for Assignment_1_3
+Info: Nothing to build for FIFO_Scheduler
+Info: Nothing to build for Pointers
+Info: Nothing to build for Priority_Scheduler
+Info: Nothing to build for SampleProcess
+14:48:57 **** Incremental Build of configuration Debug for project ThreadExample ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.c" 
+..\src\main.c: In function 'main':
+..\src\main.c:18:2: error: unknown type name 'pthread_t'
+  pthread_t thread1, thread2;
+  ^~~~~~~~~
+..\src\main.c:23:2: warning: implicit declaration of function 'pthread_creat' [-Wimplicit-function-declaration]
+  pthread_creat(&, NULL, function_thread1, (void *)msg1);
+  ^~~~~~~~~~~~~
+..\src\main.c:23:17: error: expected expression before ',' token
+  pthread_creat(&, NULL, function_thread1, (void *)msg1);
+                 ^
+..\src\main.c:20:9: warning: unused variable 'msg2' [-Wunused-variable]
+  char * msg2 = "Second Thread";
+         ^~~~
+..\src\main.c:18:21: warning: unused variable 'thread2' [-Wunused-variable]
+  pthread_t thread1, thread2;
+                     ^~~~~~~
+..\src\main.c:18:12: warning: unused variable 'thread1' [-Wunused-variable]
+  pthread_t thread1, thread2;
+            ^~~~~~~
+..\src\main.c: In function 'function_thread1':
+..\src\main.c:29:9: warning: variable 'msg' set but not used [-Wunused-but-set-variable]
+  char * msg;
+         ^~~
+..\src\main.c: At top level:
+..\src\main.c:36:8: error: redefinition of 'function_thread1'
+ void * function_thread1(void * parameter)
+        ^~~~~~~~~~~~~~~~
+..\src\main.c:27:8: note: previous definition of 'function_thread1' was here
+ void * function_thread1(void * parameter)
+        ^~~~~~~~~~~~~~~~
+Info: Nothing to build for Assignment_1_2
+Info: Nothing to build for Assignment_1_3
+Info: Nothing to build for FIFO_Scheduler
+Info: Nothing to build for Pointers
+Info: Nothing to build for Priority_Scheduler
+Info: Nothing to build for SampleProcess
+14:55:04 **** Incremental Build of configuration Debug for project ThreadExample ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.c" 
+..\src\main.c: In function 'main':
+..\src\main.c:20:2: error: unknown type name 'pthread_t'
+  pthread_t thread1, thread2;
+  ^~~~~~~~~
+..\src\main.c:25:2: warning: implicit declaration of function 'pthread_creat' [-Wimplicit-function-declaration]
+  pthread_creat(&, NULL, function_thread1, (void *)msg1);
+  ^~~~~~~~~~~~~
+..\src\main.c:25:17: error: expected expression before ',' token
+  pthread_creat(&, NULL, function_thread1, (void *)msg1);
+                 ^
+..\src\main.c:26:17: error: expected expression before ',' token
+  pthread_creat(&, NULL, function_thread2, (void *)msg2);
+                 ^
+..\src\main.c:29:2: warning: implicit declaration of function 'pthread_join' [-Wimplicit-function-declaration]
+  pthread_join(thread1, NULL);
+  ^~~~~~~~~~~~
+..\src\main.c: In function 'function_thread1':
+..\src\main.c:41:3: error: unknown type name 'pthread_t'
+   pthread_t selfid = pthread__self();
+   ^~~~~~~~~
+..\src\main.c:41:22: warning: implicit declaration of function 'pthread__self' [-Wimplicit-function-declaration]
+   pthread_t selfid = pthread__self();
+                      ^~~~~~~~~~~~~
+..\src\main.c:45:3: warning: implicit declaration of function 'sleep' [-Wimplicit-function-declaration]
+   sleep(1); // sleep 1s in Linux
+   ^~~~~
+..\src\main.c: At top level:
+..\src\main.c:51:8: error: redefinition of 'function_thread1'
+ void * function_thread1(void * parameter)
+        ^~~~~~~~~~~~~~~~
+..\src\main.c:34:8: note: previous definition of 'function_thread1' was here
+ void * function_thread1(void * parameter)
+        ^~~~~~~~~~~~~~~~
+..\src\main.c: In function 'function_thread1':
+..\src\main.c:58:3: error: unknown type name 'pthread_t'
+   pthread_t selfid = pthread__self();
+   ^~~~~~~~~

@@ -1,0 +1,43 @@
+14:55:04 **** Incremental Build of configuration Debug for project ThreadExample ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.c" 
+..\src\main.c: In function 'main':
+..\src\main.c:20:2: error: unknown type name 'pthread_t'
+  pthread_t thread1, thread2;
+  ^~~~~~~~~
+..\src\main.c:25:2: warning: implicit declaration of function 'pthread_creat' [-Wimplicit-function-declaration]
+  pthread_creat(&, NULL, function_thread1, (void *)msg1);
+  ^~~~~~~~~~~~~
+..\src\main.c:25:17: error: expected expression before ',' token
+  pthread_creat(&, NULL, function_thread1, (void *)msg1);
+                 ^
+..\src\main.c:26:17: error: expected expression before ',' token
+  pthread_creat(&, NULL, function_thread2, (void *)msg2);
+                 ^
+..\src\main.c:29:2: warning: implicit declaration of function 'pthread_join' [-Wimplicit-function-declaration]
+  pthread_join(thread1, NULL);
+  ^~~~~~~~~~~~
+..\src\main.c: In function 'function_thread1':
+..\src\main.c:41:3: error: unknown type name 'pthread_t'
+   pthread_t selfid = pthread__self();
+   ^~~~~~~~~
+..\src\main.c:41:22: warning: implicit declaration of function 'pthread__self' [-Wimplicit-function-declaration]
+   pthread_t selfid = pthread__self();
+                      ^~~~~~~~~~~~~
+..\src\main.c:45:3: warning: implicit declaration of function 'sleep' [-Wimplicit-function-declaration]
+   sleep(1); // sleep 1s in Linux
+   ^~~~~
+..\src\main.c: At top level:
+..\src\main.c:51:8: error: redefinition of 'function_thread1'
+ void * function_thread1(void * parameter)
+        ^~~~~~~~~~~~~~~~
+..\src\main.c:34:8: note: previous definition of 'function_thread1' was here
+ void * function_thread1(void * parameter)
+        ^~~~~~~~~~~~~~~~
+..\src\main.c: In function 'function_thread1':
+..\src\main.c:58:3: error: unknown type name 'pthread_t'
+   pthread_t selfid = pthread__self();
+   ^~~~~~~~~
+
+14:55:04 Build Finished (took 384ms)
+
